@@ -1,11 +1,16 @@
-from django.shortcuts import render
+"""This file defines each view."""
 
+from django.shortcuts import render
 from django.http import HttpResponse
 
+
 def index(request):
+    """Define the index view."""
     return HttpResponse('Hello! This is a recipe book.')
 
+
 def recipes_view(request):
+    """Define the recipes view."""
     ctx = {
         "recipes": [
             {
@@ -70,10 +75,11 @@ def recipes_view(request):
             }
         ]
     }
-    return render(request, 'recipe.html', ctx)
+    return render(request, 'recipes/list.html', ctx)
 
 
 def recipe1_view(request):
+    """Define the Recipe 1 view."""
     ctx = {
         "name": "Recipe 1",
         "ingredients": [
@@ -100,10 +106,11 @@ def recipe1_view(request):
         ],
         "link": "/recipe/1"
     }
-    return render(request, '1.html', ctx)
+    return render(request, 'recipe/1.html', ctx)
 
 
 def recipe2_view(request):
+    """Define the Recipe 2 view."""
     ctx = {
         "name": "Recipe 2",
         "ingredients": [
@@ -138,4 +145,4 @@ def recipe2_view(request):
         ],
         "link": "/recipe/2"
     }
-    return render(request, '2.html', ctx)
+    return render(request, 'recipe/2.html', ctx)
