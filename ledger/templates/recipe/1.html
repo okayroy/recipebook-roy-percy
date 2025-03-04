@@ -1,0 +1,15 @@
+<!-- This file creates the view for Recipe 1 -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Recipe Book{% endblock %}
+{% block content %} 
+    <ul>
+        {% for ingredient in ingredients %}
+        <li>{{ ingredient.name }} {{ingredient.quantity}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
