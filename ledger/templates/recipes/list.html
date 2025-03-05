@@ -1,3 +1,6 @@
+<!-- This file formats the names of the recipes 
+    with their corresponding links -->
+
 {% extends 'base.html' %}
 
 {% load static %}
@@ -5,8 +8,8 @@
 {% block title %}Recipe Book{% endblock %}
 {% block content %} 
     <ul>
-        {% for recipe in recipes %}
-        <li><a href="{{recipe.link}}">{{recipe.name}}</a></li>
+        {% for recipe in object_list %}
+        <li><a href="{{recipe.get_absolute_url}}">{{recipe}}</a></li>
         {% endfor %}
     </ul>
 

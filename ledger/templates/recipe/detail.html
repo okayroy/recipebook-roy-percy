@@ -1,0 +1,15 @@
+<!-- This file formats the details/ingredients of the recipes -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Recipe Book{% endblock %}
+{% block content %} 
+    <ul>
+        {% for ingredient in recipe.ingredients.all %}
+        <li>{{ ingredient.ingredient.name }} {{ingredient.ingredient.quantity}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
