@@ -6,7 +6,7 @@ from .models import Recipe
 
 def index(request):
     """Define the index view."""
-    return HttpResponse('Hello! This is a recipe book.')
+    return HttpResponse('Please go to localhost:8000/recipes/list for the recipes. <3')
 
 class RecipeListView(ListView):
     """Views the recipe list."""
